@@ -1,0 +1,42 @@
+usint DEF shiftleft(usint src, usint pos)
+OPEN
+  new usint ans.
+  ans:src<~pos.
+  RET ans.
+CLOSE
+usint DEF shiftright(usint src, usint pos)
+OPEN
+  new usint ans.
+  ans:src~>pos.
+  RET ans.
+CLOSE
+HEAD 
+OPEN
+  new usint a.
+  a:10d.
+  writeline a.
+  new usint b.
+  b:Ah.
+  writeline b.
+  new symbol c.
+  c:'a'.
+  writeline c.
+  new usint d.
+  d:RANDOM().
+  writeline d.
+  new string s.
+  s: DATE().
+  writeline s.
+  new usint x.
+  x:8d.
+  x:shiftleft(x, 1d).
+  writeline x.
+  x:shiftright(x, 2d).
+  writeline x.
+  new usint i.
+  i:1d.
+  CYCLE(i<5d)
+    i:i<~1d.
+    write i.
+  ENDC
+CLOSE
